@@ -1,4 +1,4 @@
-package main;
+package org.testassignment.pageobject;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;

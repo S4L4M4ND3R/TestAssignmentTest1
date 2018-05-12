@@ -1,20 +1,22 @@
 package testSearch;
 
 import static org.junit.Assert.*;
-import main.GoogleSearchPage;
-import main.GoogleResultPage;
+
+import org.openqa.selenium.WebDriver;
+import org.testassignment.core.DriverConfiguration;
+import org.testassignment.pageobject.GoogleSearchPage;
+import org.testassignment.pageobject.GoogleResultPage;
 import org.junit.Test;
-import org.openqa.selenium.*;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
 public class TestGoogleSearch {
 
-    WebDriver driver;
+    DriverConfiguration browser = new DriverConfiguration("chrome");
+    WebDriver driver = browser.getLocalDriver();
 
     @Test
     public void testGoogleSearchResultValue() {
-        System.setProperty("webdriver.gecko.driver","C:\\Users\\saboa\\IdeaProjects\\TestAssignmentProject1\\src\\resources\\drivers\\geckodriver.exe");
-        driver = new FirefoxDriver();
+
         driver.get("https://www.google.com/");
 
         GoogleSearchPage googleSearchPage = new GoogleSearchPage(driver);
